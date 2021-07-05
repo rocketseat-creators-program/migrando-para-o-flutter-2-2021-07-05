@@ -1,16 +1,22 @@
-# migrationflutter2
+<img  src="https://storage.googleapis.com/golden-wind/experts-club/capa-github.svg"  />
 
-A new Flutter project.
+# Migrando para o Flutter 2
 
-## Getting Started
+O tão sonhado Flutter 2.0 chegou cheio de novidades e famosos break changes! Claro que vamos aprender a burlar essas quebras e migrar o projeto da forma mais simples e eficiênte possível.
 
-This project is a starting point for a Flutter application.
+Vem comigo nessa aula de hoje aprender a fazer mágina nessa migração
 
-A few resources to get you started if this is your first Flutter project:
+  
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+### Informações
+Acesse o notion para lhe direcionar na aula junto comigo
+[Notion](https://www.notion.so/Migrando-para-o-Flutter-2-be8531ff48d04cb589b9a3229a8baa82)
+  
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Expert
+
+  
+
+| [<img src="https://avatars.githubusercontent.com/u/32063378?s=460&u=6720dd978cc0757ee58a3fefb1f0f073896deb32&v=4" width="75px;"/>](https://github.com/diego3g) |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [Gabul DEV](https://github.com/gabuldev) |
