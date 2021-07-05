@@ -25,7 +25,14 @@ class _HomePageState extends State<HomePage> {
                 accountName: Text(widget.user.name),
                 accountEmail: Text(
                   widget.user.email,
-                ))
+                )),
+            ListTile(
+              title: Text("Sair"),
+              trailing: Icon(Icons.exit_to_app),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, "/login");
+              },
+            ),
           ],
         ),
       ),

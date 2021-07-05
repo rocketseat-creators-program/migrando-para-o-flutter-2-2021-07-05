@@ -10,6 +10,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter migration 2',
       theme: ThemeData(
+        cursorColor: Colors.purple,
         primarySwatch: Colors.purple,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

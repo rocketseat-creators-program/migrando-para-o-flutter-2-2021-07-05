@@ -24,7 +24,8 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     controller.userNotifier.addListener(() {
       if (controller.user != null) {
-        Navigator.pushNamed(context, "/home", arguments: controller.user);
+        Navigator.pushReplacementNamed(context, "/home",
+            arguments: controller.user);
       }
     });
     super.initState();
@@ -33,38 +34,77 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Form(
-              child: Column(
-            children: [
-              AnimatedCard(
-                direction: AnimatedCardDirection.right,
-                child: TextFormField(
-                  decoration: InputDecoration(labelText: "Email"),
-                  onChanged: (value) => email = value,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset(
+              "assets/images/logo.png",
+              width: MediaQuery.of(context).size.width * 0.9,
+            ),
+            Form(
+                key: formKey,
+                child: Column(
+                  children: [
+                    AnimatedCard(
+                      direction: AnimatedCardDirection.right,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: TextFormField(
+                          decoration: InputDecoration(labelText: "Email"),
+                          onChanged: (value) => email = value,
+                          validator: (value) =>
+                              value.contains("@") ? null : "Email inválido!",
+                        ),
+                      ),
+                    ),
+                    AnimatedCard(
+                      direction: AnimatedCardDirection.left,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: TextFormField(
+                          decoration: InputDecoration(labelText: "Password"),
+                          onChanged: (value) => password = value,
+                          validator: (value) =>
+                              value.isEmpty || value.length < 6
+                                  ? "Senha inválida!"
+                                  : null,
+                        ),
+                      ),
+                    ),
+                  ],
+                )),
+            SizedBox(
+              height: 24,
+            ),
+            AnimatedCard(
+              direction: AnimatedCardDirection.bottom,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: RaisedButton(
+                          color: Colors.purple,
+                          colorBrightness: Brightness.dark,
+                          child: Text("Entrar"),
+                          onPressed: () {
+                            if (validate()) {
+                              controller.login(
+                                  email: email, password: password);
+                            }
+                          }),
+                    ),
+                  ],
                 ),
               ),
-              AnimatedCard(
-                direction: AnimatedCardDirection.left,
-                child: TextFormField(
-                  decoration: InputDecoration(labelText: "Password"),
-                  onChanged: (value) => password = value,
-                ),
-              ),
-            ],
-          )),
-          AnimatedCard(
-            direction: AnimatedCardDirection.bottom,
-            child: RaisedButton(
-                child: Text("Entrar"),
-                onPressed: () {
-                  if (validate()) {
-                    controller.login(email: email, password: password);
-                  }
-                }),
-          )
-        ],
+            ),
+            SizedBox(
+              height: 24,
+            ),
+          ],
+        ),
       ),
     );
   }
